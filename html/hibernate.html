@@ -1,93 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Proyecto Hibernate | Pedro Baonza</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proyecto Hibernate 🗃️ | Pedro Baonza</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gradient-to-br from-gray-50 to-blue-100 text-gray-800">
+  <!-- Header -->
   <header class="bg-white shadow p-6 text-center">
     <h1 class="text-4xl font-bold text-blue-800">Proyecto Hibernate 🗃️</h1>
-    <p class="mt-2 text-lg text-gray-600">Sistema de gestión de empleados y departamentos usando Java y Hibernate ORM</p>
+    <p class="mt-2 text-lg text-gray-600">CRUD completo en Java con Hibernate + relaciones y configuración JPA</p>
   </header>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-10">
-    <!-- Descripción general -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔍 Descripción general</h2>
-      <p>Este proyecto implementa un sistema de gestión empresarial que permite administrar empleados, departamentos, clientes y proyectos mediante una interfaz de consola y el uso de Hibernate ORM como herramienta de persistencia de datos. El propósito principal es consolidar el aprendizaje sobre bases de datos relacionales, relaciones entre entidades y su interacción desde Java usando Hibernate.</p>
+  <main class="max-w-4xl mx-auto px-6 py-10">
+    <!-- Introducción -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🔍 Descripción General</h2>
+      <p>Este proyecto consiste en una aplicación Java que utiliza Hibernate como ORM para realizar operaciones CRUD completas sobre una base de datos relacional. Es ideal para entender cómo funcionan las entidades, las relaciones entre tablas y la configuración mediante JPA.</p>
     </section>
 
-    <!-- Arquitectura y estructura -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🏗️ Arquitectura y estructura del proyecto</h2>
-      <p>La aplicación sigue una arquitectura modular y clara, con separación de responsabilidades en tres paquetes principales:</p>
-      <ul class="list-disc list-inside mt-2 space-y-1">
-        <li><strong>modelo:</strong> contiene las clases de entidad como <code>Empleados</code>, <code>Departamentos</code>, <code>Clientes</code> y <code>Proyectos</code>, cada una con su archivo de mapeo `.hbm.xml` correspondiente.</li>
-        <li><strong>funciones:</strong> agrupa toda la lógica funcional del sistema, como menús, validaciones y operaciones CRUD.</li>
-        <li><strong>launcherAPP:</strong> punto de entrada de la aplicación con clases como <code>MainApp</code>, <code>ControladorPrograma</code> y <code>ConexionHibernate</code>.</li>
-      </ul>
-    </section>
-
-    <!-- Funcionalidades -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🛠️ Funcionalidades del sistema</h2>
+    <!-- Características Técnicas -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">⚙️ Características Técnicas</h2>
       <ul class="list-disc list-inside space-y-2">
-        <li>Creación de empleados y departamentos con campos dinámicos</li>
-        <li>Listar empleados y departamentos con filtros de búsqueda</li>
-        <li>Modificar atributos como nombre, dirección, cargo, etc.</li>
-        <li>Eliminar registros con validaciones de integridad</li>
-        <li>Gestión de relaciones uno a muchos y muchos a uno</li>
-        <li>Persistencia completa con sesiones y transacciones Hibernate</li>
+        <li>Implementación de clases entidad con anotaciones JPA.</li>
+        <li>Conexión con base de datos MySQL mediante archivo <code>hibernate.cfg.xml</code>.</li>
+        <li>Relaciones OneToMany y ManyToOne entre entidades.</li>
+        <li>Consultas HQL y manejo de sesiones Hibernate.</li>
+        <li>Interfaz de consola simple para probar operaciones CRUD.</li>
       </ul>
     </section>
 
-    <!-- Detalles técnicos -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">⚙️ Detalles técnicos y configuración</h2>
-      <p>El proyecto utiliza Hibernate en modo XML (sin anotaciones) y se conecta a una base de datos MySQL mediante el archivo <code>hibernate.cfg.xml</code>. Esta configuración define el driver JDBC, usuario, contraseña y dialecto SQL correspondiente.</p>
-      <p class="mt-2">Las relaciones entre entidades están definidas con precisión usando archivos `.hbm.xml`, gestionando claves primarias y foráneas para mantener la integridad referencial.</p>
+    <!-- Estructura del Proyecto -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🗂️ Estructura del Código</h2>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>
+├── src
+│   ├── model
+│   │   └── Producto.java
+│   ├── dao
+│   │   └── ProductoDAO.java
+│   ├── utils
+│   │   └── HibernateUtil.java
+│   └── Main.java
+├── resources
+│   └── hibernate.cfg.xml
+      </code></pre>
     </section>
 
-    <!-- Curiosidades sobre Hibernate -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">💡 Curiosidades y ventajas de Hibernate</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li>Hibernate simplifica el acceso a bases de datos mediante objetos Java en lugar de SQL directo.</li>
-        <li>Permite el uso de HQL (Hibernate Query Language), una alternativa a SQL orientada a objetos.</li>
-        <li>Incluye mecanismos de caché de primer y segundo nivel para mejorar el rendimiento.</li>
-        <li>Soporta herencia, relaciones complejas y validación de integridad automática.</li>
-        <li>Muy utilizado en entornos corporativos y fácilmente integrable con frameworks como Spring.</li>
-      </ul>
+    <!-- Captura o código -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-semibold text-blue-700 mb-4">🧩 Código Destacado</h2>
+      <p class="mb-2">Ejemplo de clase entidad con mapeo a tabla:</p>
+      <pre class="bg-gray-100 p-4 rounded text-sm overflow-x-auto"><code>
+@Entity
+@Table(name = "productos")
+public class Producto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String nombre;
+    private double precio;
+    // getters y setters
+}
+      </code></pre>
     </section>
 
-    <!-- Imagen demostrativa -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🖼️ Captura del sistema</h2>
-      <img src="images/hibernate-demo.png" alt="Ejemplo Hibernate" class="rounded shadow-lg">
-      <p class="text-sm text-gray-500 mt-2">Interfaz por consola mostrando menús y operaciones de gestión.</p>
-    </section>
-
-    <!-- Reflexión personal -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🧠 Lo que aprendí</h2>
-      <p>Este proyecto me ayudó a entender los fundamentos del mapeo objeto-relacional y cómo estructurar un sistema Java modular con conexión a base de datos. Además, profundicé en el uso de sesiones, transacciones, relaciones entre tablas y gestión de errores en tiempo de ejecución. También reforcé el uso de Eclipse como entorno profesional y aprendí a gestionar dependencias externas como `.jar` para ampliar funcionalidades.</p>
-    </section>
-
-    <!-- Recursos -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔗 Recursos y enlaces</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li><a href="https://github.com/PedroBaonza/Proyecto-Hibernate" class="text-blue-600 underline" target="_blank">Repositorio en GitHub</a></li>
-        <li><a href="https://hibernate.org/orm/" class="text-blue-600 underline" target="_blank">Documentación oficial de Hibernate</a></li>
-        <li><a href="index.html" class="text-blue-600 underline">Volver al portfolio</a></li>
-      </ul>
+    <!-- Llamado a la acción -->
+    <section class="text-center bg-white p-6 rounded-lg shadow">
+      <h2 class="text-xl font-bold text-blue-700 mb-2">🚀 ¿Quieres ver el código completo?</h2>
+      <p class="mb-4 text-gray-600">Explora el repositorio en GitHub con toda la lógica, archivos de configuración y estructura comentada.</p>
+      <a href="https://github.com/PedroBaonza/Proyecto-Hibernate" target="_blank" class="inline-block bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800 transition">Ver repositorio en GitHub</a>
     </section>
   </main>
 
-  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
-    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center p-6 mt-12">
+    <p class="text-sm">© 2025 Pedro Baonza · <a href="../index.html" class="underline hover:text-blue-300">Volver al portfolio</a></p>
   </footer>
 </body>
 </html>
