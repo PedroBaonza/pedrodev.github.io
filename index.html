@@ -3,139 +3,136 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PedroDev | Portfolio</title>
+  <title>Pedro Baonza | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-br from-gray-100 to-blue-100 text-gray-800 font-sans">
+<body class="bg-gradient-to-br from-gray-100 to-blue-50 text-gray-800 font-sans leading-relaxed">
+
   <!-- Header -->
-  <header class="bg-white shadow p-8 text-center">
-    <h1 class="text-5xl font-bold text-blue-800">Pedro Baonza 👨‍💻</h1>
-    <p class="mt-3 text-xl text-gray-600">Desarrollador móvil en formación con base técnica sólida y pasión por seguir creciendo.</p>
+  <header class="bg-white shadow-md p-10 text-center">
+    <h1 class="text-4xl md:text-5xl font-bold text-blue-800">Pedro Baonza 👨‍💻</h1>
+    <p class="mt-4 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">Desarrollador móvil en formación con base técnica sólida y pasión por seguir creciendo en Android.</p>
   </header>
 
-  <!-- Navegación interna -->
-  <nav class="bg-blue-600 text-white text-center py-3 sticky top-0 shadow z-50">
-    <a href="#sobre-mi" class="mx-4 hover:underline">Sobre mí</a>
-    <a href="#habilidades" class="mx-4 hover:underline">Habilidades</a>
-    <a href="#proyectos" class="mx-4 hover:underline">Proyectos</a>
-    <a href="#experiencia" class="mx-4 hover:underline">Experiencia</a>
-    <a href="#contacto" class="mx-4 hover:underline">Contacto</a>
+  <!-- Navegación -->
+  <nav class="bg-blue-700 text-white text-sm md:text-base py-4 sticky top-0 z-50 shadow-md text-center">
+    <a href="#sobre-mi" class="mx-3 hover:underline">Sobre mí</a>
+    <a href="#habilidades" class="mx-3 hover:underline">Habilidades</a>
+    <a href="#proyectos" class="mx-3 hover:underline">Proyectos</a>
+    <a href="#experiencia" class="mx-3 hover:underline">Experiencia</a>
+    <a href="#contacto" class="mx-3 hover:underline">Contacto</a>
   </nav>
 
   <!-- Sección: Sobre mí -->
-  <section id="sobre-mi" class="max-w-4xl mx-auto p-6">
-    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Sobre mí</h2>
-    <p class="mb-4">Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, con formación adicional en sistemas eléctricos y automatismos. Me considero una persona autodidacta, resolutiva y entusiasta por la tecnología. Actualmente me especializo en desarrollo Android con Kotlin, aplicando arquitectura MVVM y herramientas modernas como Retrofit, Firebase y JUnit para testing.</p>
-    <p>Busco oportunidades donde pueda seguir aprendiendo, aportar soluciones y crecer dentro de un equipo dinámico. Mi objetivo es convertirme en un desarrollador Android sólido y versátil.</p>
+  <section id="sobre-mi" class="max-w-4xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-4">🧑‍💼 Sobre mí</h2>
+    <p class="mb-4">Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, con conocimientos en sistemas eléctricos y automatismos. Actualmente me especializo en desarrollo Android con Kotlin, aplicando arquitectura MVVM y herramientas como Retrofit, Firebase y JUnit para testing.</p>
+    <p>Mi objetivo es formar parte de un equipo donde pueda crecer, seguir aprendiendo y aportar soluciones tecnológicas reales.</p>
   </section>
 
-  <!-- Sección: Habilidades Técnicas -->
-  <section id="habilidades" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow my-6">
-    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Habilidades Técnicas</h2>
+  <!-- Sección: Habilidades -->
+  <section id="habilidades" class="bg-white py-10 px-6 my-8 shadow-md rounded-lg max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-6">🛠️ Habilidades Técnicas</h2>
     <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 list-disc list-inside">
       <li>Java (CRUD completo, Hibernate)</li>
       <li>Kotlin (Android, XML, MVVM)</li>
       <li>Retrofit 2 / Firebase / SQLite</li>
-      <li>HTML/CSS / Tailwind / Git</li>
+      <li>HTML / CSS / Tailwind / Git</li>
       <li>JUnit / MockWebServer / Espresso</li>
       <li>Python (básico, autodidacta)</li>
     </ul>
   </section>
 
-  <!-- Sección: Proyectos Destacados -->
-  <section id="proyectos" class="max-w-6xl mx-auto p-6">
-    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Proyectos Destacados</h2>
+  <!-- Sección: Proyectos -->
+  <section id="proyectos" class="max-w-6xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-6">📂 Proyectos Destacados</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <!-- BookExplorer -->
       <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
         <h3 class="text-xl font-bold">BookExplorer 📚</h3>
         <img src="images/BookExplorerPortada.jpg" alt="BookExplorer" class="rounded my-3">
         <p class="mb-2">App Android que permite buscar libros desde OpenLibrary usando Retrofit. Diseño limpio, uso de ViewModel y navegación entre pantallas.</p>
         <p>
-          <a href="https://github.com/PedroBaonza/BookExplorer" target="_blank" class="text-blue-600 underline">Ver en GitHub</a> ·
-          <a href="./html/bookExplorer.html" target="_blank" class="text-blue-600 underline">Ver sitio</a>
+          <a href="https://github.com/PedroBaonza/BookExplorer" class="text-blue-600 underline" target="_blank">GitHub</a> · 
+          <a href="./html/bookExplorer.html" class="text-blue-600 underline" target="_blank">Ver sitio</a>
         </p>
       </div>
+
+      <!-- ToDo List -->
       <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
         <h3 class="text-xl font-bold">ToDo List Clean Testing ✅</h3>
-        <p class="mb-2">Aplicación de tareas con arquitectura Clean y todos los tipos de testing en Android: unitarios, UI tests, MockWebServer y TDD. Ideal como referencia técnica.</p>
-        <p>
-          <a href="https://github.com/PedroBaonza/ToDoList-CleanTesting" target="_blank" class="text-blue-600 underline">Ver en GitHub</a>
-        </p>
+        <p class="mb-2">App de tareas con Clean Architecture y todos los tipos de testing Android: unitarios, UI tests, MockWebServer y TDD.</p>
+        <p><a href="https://github.com/PedroBaonza/ToDoList-CleanTesting" class="text-blue-600 underline" target="_blank">GitHub</a></p>
       </div>
+
+      <!-- Hibernate -->
       <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
         <h3 class="text-xl font-bold">Proyecto Hibernate 🗃️</h3>
-        <p class="mb-2">Aplicación Java que gestiona entidades con base de datos utilizando Hibernate. Incluye operaciones CRUD, relaciones entre tablas y configuración JPA.</p>
+        <p class="mb-2">Aplicación Java con Hibernate para gestión de entidades, relaciones y operaciones CRUD.</p>
         <p>
-          <a href="https://github.com/PedroBaonza/Proyecto-Hibernate" target="_blank" class="text-blue-600 underline">Ver en GitHub</a> ·
+          <a href="https://github.com/PedroBaonza/Proyecto-Hibernate" class="text-blue-600 underline" target="_blank">GitHub</a> · 
           <a href="./html/hibernate.html" class="text-blue-600 underline">Ver detalles</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Sección: Experiencia Profesional -->
-  <section id="experiencia" class="max-w-4xl mx-auto p-6">
-    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Experiencia Profesional</h2>
-    <ul class="space-y-4">
-      <li>
-        <strong>Prosegur / Trablisa</strong> – Atención al cliente (2023 - 2025)<br>
-        Gestión de incidencias, trato con el público y soporte técnico en centros comerciales.
-      </li>
-      <li>
-        <strong>Gestiman</strong> – Electromecánico (2023 - 2024)<br>
-        Mantenimiento de atracciones en parques temáticos como Warner Beach y Aquopolis.
-      </li>
-      <li>
-        <strong>IVOLTA</strong> – Oficina Técnica Electricista (2023)<br>
-        Diseño de proyectos eléctricos y desarrollo lumínico en viviendas unifamiliares.
-      </li>
+  <!-- Sección: Experiencia -->
+  <section id="experiencia" class="max-w-4xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-6">💼 Experiencia Profesional</h2>
+    <ul class="space-y-4 text-base">
+      <li><strong>Prosegur / Trablisa</strong> – Atención al cliente (2023 - 2025)<br>Gestión de incidencias y soporte técnico en centros comerciales.</li>
+      <li><strong>Gestiman</strong> – Electromecánico (2023 - 2024)<br>Mantenimiento técnico en atracciones de parques como Warner Beach.</li>
+      <li><strong>IVOLTA</strong> – Oficina Técnica Electricista (2023)<br>Diseño de proyectos eléctricos en viviendas unifamiliares.</li>
     </ul>
   </section>
 
-  <section class="max-w-3xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Últimos artículos del blog</h2>
-    <ul class="space-y-4">
-      <li class="bg-white p-4 rounded shadow">
+  <!-- Sección: Artículos del Blog -->
+  <section class="max-w-3xl mx-auto px-6 py-10">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-6">📝 Últimos artículos del blog</h2>
+    <ul class="space-y-6">
+      <li class="bg-white p-5 rounded shadow">
         <h3 class="text-xl font-bold">Cómo usé Retrofit por primera vez en Android</h3>
         <p class="text-sm text-gray-600">Publicado el 2 de mayo de 2025</p>
         <p class="mt-2">Una guía paso a paso para consumir una API REST usando Retrofit y Kotlin.</p>
         <a href="./html/retrofit-android.html" class="text-blue-600 underline">Leer más →</a>
       </li>
-      <li class="bg-white p-4 rounded shadow">
+      <li class="bg-white p-5 rounded shadow">
         <h3 class="text-xl font-bold">Mi experiencia aprendiendo MVVM con Firebase</h3>
         <p class="text-sm text-gray-600">Publicado el 30 de abril de 2025</p>
         <p class="mt-2">Lecciones que aprendí integrando autenticación de Firebase con un flujo de registro.</p>
         <a href="./html/mvvm-firebase.html" class="text-blue-600 underline">Leer más →</a>
       </li>
-      <li class="bg-white p-4 rounded shadow">
+      <li class="bg-white p-5 rounded shadow">
         <h3 class="text-xl font-bold">Cómo integré Firebase Auth en Android con MVVM</h3>
         <p class="text-sm text-gray-600">Publicado el 3 de mayo de 2025</p>
-        <p class="mt-2">Tutorial completo para integrar login con email y contraseña usando Firebase Authentication en una app Android con arquitectura limpia y testable.</p>
+        <p class="mt-2">Tutorial completo para integrar login con email y contraseña usando Firebase Authentication y Clean Architecture.</p>
         <a href="./html/firebase-login.html" class="text-blue-600 underline">Leer más →</a>
       </li>
     </ul>
   </section>
 
   <!-- Sección: Contacto -->
-  <section id="contacto" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow my-10">
-    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Contacto</h2>
+  <section id="contacto" class="max-w-3xl mx-auto px-6 py-10 bg-white rounded-lg shadow-md my-10">
+    <h2 class="text-3xl font-semibold text-blue-700 mb-6">📬 Contacto</h2>
     <form action="mailto:pedrobaonza0115@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
-      <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-2 border rounded" />
-      <input type="email" name="email" placeholder="Tu correo" required class="w-full p-2 border rounded" />
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required class="w-full p-2 border rounded"></textarea>
-      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
+      <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-3 border rounded" />
+      <input type="email" name="email" placeholder="Tu correo" required class="w-full p-3 border rounded" />
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required class="w-full p-3 border rounded"></textarea>
+      <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded hover:bg-blue-800">Enviar</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center p-6">
+  <footer class="bg-gray-800 text-white text-center py-6">
     <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
     <p class="mt-2">
       <a href="https://github.com/PedroBaonza" class="underline hover:text-blue-300">GitHub</a> · 
-      <a href="mailto:pedrobaonza0115@gmail.com" class="underline hover:text-blue-300">Contacto</a> · 
+      <a href="mailto:pedrobaonza0115@gmail.com" class="underline hover:text-blue-300">Correo</a> · 
       <a href="https://www.linkedin.com/in/pedro-baonza-garc%C3%ADa-411b15274/" class="underline hover:text-blue-300">LinkedIn</a> · 
       <a href="./CV - Pedro Baonza - 2025.pdf" class="underline hover:text-blue-300">CV</a>
     </p>
   </footer>
+
 </body>
 </html>
