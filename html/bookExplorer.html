@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BookExplorer | Pedro Baonza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-4xl font-bold text-blue-800">BookExplorer 📚</h1>
+    <p class="mt-2 text-lg text-gray-600">Aplicación Android para buscar libros desde la API de OpenLibrary</p>
+  </header>
+
+  <main class="max-w-5xl mx-auto p-6 space-y-10">
+    <!-- Descripción general -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔍 Descripción general</h2>
+      <p>BookExplorer es una aplicación Android desarrollada en Kotlin que permite buscar libros mediante el uso de la API pública de OpenLibrary. Presenta los resultados de manera visual en un RecyclerView y permite al usuario ver los detalles de cada libro seleccionado.</p>
+    </section>
+
+    <!-- Arquitectura y tecnologías -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🏗️ Arquitectura y tecnologías</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><strong>Lenguaje:</strong> Kotlin</li>
+        <li><strong>Patrón:</strong> MVVM (Model - View - ViewModel)</li>
+        <li><strong>API:</strong> OpenLibrary API para búsqueda de libros</li>
+        <li><strong>UI:</strong> RecyclerView, ConstraintLayout, CardView</li>
+        <li><strong>Networking:</strong> Retrofit 2 con GsonConverter</li>
+        <li><strong>Asincronía:</strong> Corutinas</li>
+        <li><strong>Testing:</strong> JUnit</li>
+      </ul>
+    </section>
+
+    <!-- Funcionalidades -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🛠️ Funcionalidades destacadas</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>Formulario de búsqueda con control de errores y validaciones</li>
+        <li>Consumo de datos en tiempo real desde OpenLibrary</li>
+        <li>Interfaz fluida que muestra portadas, títulos y autores</li>
+        <li>Pantalla de detalle con información extendida de cada libro</li>
+        <li>Gestión de estados: cargando, éxito, error</li>
+        <li>Separación clara entre lógica de negocio y vistas</li>
+      </ul>
+    </section>
+
+    <!-- Captura -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">📱 Captura de la aplicación</h2>
+      <img src="images/bookexplorer-demo.png" alt="BookExplorer Demo" class="rounded shadow-lg">
+      <p class="text-sm text-gray-500 mt-2">Pantalla de resultados con diseño limpio y responsivo.</p>
+    </section>
+
+    <!-- Lecciones aprendidas -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🧠 Lo que aprendí</h2>
+      <p>Con BookExplorer aprendí a estructurar correctamente un proyecto Android moderno utilizando MVVM, a consumir APIs REST usando Retrofit y corutinas, y a mantener una arquitectura limpia y escalable. También reforcé buenas prácticas como el uso de ViewModel para evitar pérdidas de estado en rotaciones, y el manejo de estados de carga y error.</p>
+    </section>
+
+    <!-- Recursos -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔗 Recursos y enlaces</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li><a href="https://github.com/PedroBaonza/BookExplorer" class="text-blue-600 underline" target="_blank">Repositorio en GitHub</a></li>
+        <li><a href="https://openlibrary.org/developers/api" class="text-blue-600 underline" target="_blank">Documentación de la API de OpenLibrary</a></li>
+        <li><a href="index.html" class="text-blue-600 underline">Volver al portfolio</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
