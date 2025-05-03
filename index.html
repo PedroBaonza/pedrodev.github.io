@@ -6,24 +6,33 @@
   <title>PedroDev | Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-gray-100 to-blue-100 text-gray-800 font-sans">
   <!-- Header -->
-  <header class="bg-white shadow p-6 text-center">
-    <h1 class="text-4xl font-bold">Pedro Baonza 👨‍💻</h1>
-    <p class="mt-2 text-lg">Desarrollador móvil en formación con base técnica sólida y pasión por seguir creciendo.</p>
+  <header class="bg-white shadow p-8 text-center">
+    <h1 class="text-5xl font-bold text-blue-800">Pedro Baonza 👨‍💻</h1>
+    <p class="mt-3 text-xl text-gray-600">Desarrollador móvil en formación con base técnica sólida y pasión por seguir creciendo.</p>
   </header>
 
+  <!-- Navegación interna -->
+  <nav class="bg-blue-600 text-white text-center py-3 sticky top-0 shadow z-50">
+    <a href="#sobre-mi" class="mx-4 hover:underline">Sobre mí</a>
+    <a href="#habilidades" class="mx-4 hover:underline">Habilidades</a>
+    <a href="#proyectos" class="mx-4 hover:underline">Proyectos</a>
+    <a href="#experiencia" class="mx-4 hover:underline">Experiencia</a>
+    <a href="#contacto" class="mx-4 hover:underline">Contacto</a>
+  </nav>
+
   <!-- Sección: Sobre mí -->
-  <section class="max-w-4xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Sobre mí</h2>
+  <section id="sobre-mi" class="max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Sobre mí</h2>
     <p class="mb-4">Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, con formación adicional en sistemas eléctricos y automatismos. Me considero una persona autodidacta, resolutiva y entusiasta por la tecnología. Actualmente me especializo en desarrollo Android con Kotlin, aplicando arquitectura MVVM y herramientas modernas como Retrofit, Firebase y JUnit para testing.</p>
     <p>Busco oportunidades donde pueda seguir aprendiendo, aportar soluciones y crecer dentro de un equipo dinámico. Mi objetivo es convertirme en un desarrollador Android sólido y versátil.</p>
   </section>
 
   <!-- Sección: Habilidades Técnicas -->
-  <section class="max-w-4xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Habilidades Técnicas</h2>
-    <ul class="grid grid-cols-2 gap-4 list-disc list-inside">
+  <section id="habilidades" class="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow my-6">
+    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Habilidades Técnicas</h2>
+    <ul class="grid grid-cols-2 md:grid-cols-3 gap-4 list-disc list-inside">
       <li>Java (CRUD completo, Hibernate)</li>
       <li>Kotlin (Android, XML, MVVM)</li>
       <li>Retrofit 2 / Firebase / SQLite</li>
@@ -34,25 +43,31 @@
   </section>
 
   <!-- Sección: Proyectos Destacados -->
-  <section class="max-w-5xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Proyectos Destacados</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div class="bg-white p-4 rounded shadow">
+  <section id="proyectos" class="max-w-6xl mx-auto p-6">
+    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Proyectos Destacados</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
         <h3 class="text-xl font-bold">BookExplorer 📚</h3>
+        <img src="images/bookexplorer-demo.png" alt="BookExplorer" class="rounded my-3">
         <p class="mb-2">App Android que permite buscar libros desde OpenLibrary usando Retrofit. Diseño limpio, uso de ViewModel y navegación entre pantallas.</p>
-        <p class="text-sm text-blue-600"><a href="https://github.com/PedroBaonza/BookExplorer" target="_blank">Ver en GitHub</a></p>
+        <p>
+          <a href="https://github.com/PedroBaonza/BookExplorer" target="_blank" class="text-blue-600 underline">Ver en GitHub</a> ·
+          <a href="https://pedrobaonza.github.io/bookexplorer" target="_blank" class="text-blue-600 underline">Ver sitio</a>
+        </p>
       </div>
-      <div class="bg-white p-4 rounded shadow">
+      <div class="bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
         <h3 class="text-xl font-bold">ToDo List Clean Testing ✅</h3>
         <p class="mb-2">Aplicación de tareas con arquitectura Clean y todos los tipos de testing en Android: unitarios, UI tests, MockWebServer y TDD. Ideal como referencia técnica.</p>
-        <p class="text-sm text-blue-600"><a href="https://github.com/PedroBaonza/ToDoList-CleanTesting" target="_blank">Ver en GitHub</a></p>
+        <p>
+          <a href="https://github.com/PedroBaonza/ToDoList-CleanTesting" target="_blank" class="text-blue-600 underline">Ver en GitHub</a>
+        </p>
       </div>
     </div>
   </section>
 
   <!-- Sección: Experiencia Profesional -->
-  <section class="max-w-4xl mx-auto p-6">
-    <h2 class="text-2xl font-semibold mb-4">Experiencia Profesional</h2>
+  <section id="experiencia" class="max-w-4xl mx-auto p-6">
+    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Experiencia Profesional</h2>
     <ul class="space-y-4">
       <li>
         <strong>Prosegur / Trablisa</strong> – Atención al cliente (2023 - 2025)<br>
@@ -69,8 +84,19 @@
     </ul>
   </section>
 
+  <!-- Sección: Contacto -->
+  <section id="contacto" class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow my-10">
+    <h2 class="text-3xl font-semibold mb-4 text-blue-700">Contacto</h2>
+    <form action="mailto:pedrobaonza0115@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
+      <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-2 border rounded" />
+      <input type="email" name="email" placeholder="Tu correo" required class="w-full p-2 border rounded" />
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required class="w-full p-2 border rounded"></textarea>
+      <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
+    </form>
+  </section>
+
   <!-- Footer -->
-  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+  <footer class="bg-gray-800 text-white text-center p-6">
     <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
     <p class="mt-2">
       <a href="https://github.com/PedroBaonza" class="underline hover:text-blue-300">GitHub</a> · 
