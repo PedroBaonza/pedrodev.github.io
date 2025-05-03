@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo usé Retrofit por primera vez en Android | Blog Pedro Baonza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-4xl font-bold text-blue-800">🌐 Cómo usé Retrofit por primera vez en Android</h1>
+    <p class="mt-2 text-lg text-gray-600">Publicado el 2 de mayo de 2025 · por Pedro Baonza</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 space-y-8">
+    <!-- Introducción -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">📘 ¿Qué es Retrofit?</h2>
+      <p>Retrofit es una librería de networking para Android que simplifica el consumo de APIs REST. Fue desarrollada por Square y permite convertir automáticamente respuestas JSON en objetos Kotlin usando converters como Gson.</p>
+    </section>
+
+    <!-- Por qué lo usé -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">🤔 ¿Por qué lo usé?</h2>
+      <p>Al desarrollar <strong>BookExplorer</strong>, necesitaba obtener información de libros desde una API pública. Elegí Retrofit porque permite definir endpoints como interfaces limpias, gestionar errores fácilmente y se integra bien con corutinas para asincronía.</p>
+    </section>
+
+    <!-- Pasos para implementarlo -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">🧪 Paso a paso: mi primera integración</h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>Añadí las dependencias necesarias en <code>build.gradle</code>:
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+</pre>
+        </li>
+        <li>Creé un <strong>modelo de datos</strong> (ejemplo simplificado):
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+data class Book(
+  val title: String?,
+  val author_name: List<String>?
+)
+</pre>
+        </li>
+        <li>Definí la interfaz de la API:
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+interface OpenLibraryApi {
+  @GET("search.json")
+  suspend fun searchBooks(@Query("q") query: String): Response<SearchResponse>
+}
+</pre>
+        </li>
+        <li>Configuré Retrofit con GsonConverter:
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+object RetrofitInstance {
+  private val retrofit = Retrofit.Builder()
+    .baseUrl("https://openlibrary.org/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .build()
+
+  val api: OpenLibraryApi = retrofit.create(OpenLibraryApi::class.java)
+}
+</pre>
+        </li>
+        <li>Llamé a la API desde un <strong>Repository</strong> usando Coroutines:
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+suspend fun fetchBooks(query: String): List<Book> {
+  val response = RetrofitInstance.api.searchBooks(query)
+  return if (response.isSuccessful) {
+    response.body()?.docs ?: emptyList()
+  } else emptyList()
+}
+</pre>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Resultado -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">✅ ¿Qué obtuve?</h2>
+      <ul class="list-disc list-inside">
+        <li>Búsqueda funcional de libros usando una API real</li>
+        <li>Aprendí a mapear JSON a Kotlin fácilmente</li>
+        <li>Manejo de errores y estados con éxito/error</li>
+        <li>UI limpia con datos actualizados en tiempo real</li>
+      </ul>
+    </section>
+
+    <!-- Reflexión -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">🧠 Lecciones aprendidas</h2>
+      <p>Retrofit me ayudó a entender cómo estructurar la comunicación entre una app Android y una API. Me sirvió para entender mejor la asincronía con corutinas, el patrón Repository, y cómo mostrar datos dinámicos en una app de verdad. Ahora es una herramienta fija en todos mis proyectos.</p>
+    </section>
+
+    <!-- Cierre -->
+    <section>
+      <p>Si estás empezando con Retrofit, mi consejo es: divídelo en capas, usa corutinas desde el principio y valida bien las respuestas. Y por supuesto... ¡practica con una API real!</p>
+      <p class="mt-2">📎 <a class="text-blue-600 underline" href="../index.html">Volver al portfolio</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi experiencia aprendiendo MVVM con Firebase | Blog Pedro Baonza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-4xl font-bold text-blue-800">📱 Mi experiencia aprendiendo MVVM con Firebase</h1>
+    <p class="mt-2 text-lg text-gray-600">Publicado el 30 de abril de 2025 · por Pedro Baonza</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 space-y-8">
+    <!-- Introducción -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">🔍 ¿Por qué MVVM + Firebase?</h2>
+      <p>Cuando empecé a construir aplicaciones Android más complejas, rápidamente descubrí que la arquitectura del proyecto y la forma de manejar datos y estados era tan importante como la funcionalidad misma. Elegí MVVM como patrón porque me daba estructura y Firebase porque facilitaba la conexión con servicios backend reales como autenticación, Firestore y almacenamiento.</p>
+    </section>
+
+    <!-- Qué es MVVM -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">📐 Entendiendo MVVM (Model-View-ViewModel)</h2>
+      <p>MVVM separa claramente la lógica de negocio de la UI. Aprendí a usar:</p>
+      <ul class="list-disc list-inside">
+        <li><strong>Model:</strong> las clases de datos (como Usuario, Producto)</li>
+        <li><strong>ViewModel:</strong> contiene la lógica y expone LiveData</li>
+        <li><strong>View (Activity/Fragment):</strong> observa datos y reacciona</li>
+      </ul>
+      <p>Esto me ayudó a mantener un código limpio y fácil de testear.</p>
+    </section>
+
+    <!-- Integración con Firebase -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">🔗 Firebase como backend</h2>
+      <p>Firebase me ofreció múltiples soluciones que usé en mi proyecto ShoppingMall App:</p>
+      <ul class="list-disc list-inside">
+        <li><strong>Auth:</strong> para registro/login con email y Google</li>
+        <li><strong>Firestore:</strong> para almacenar datos como productos y usuarios</li>
+        <li><strong>Storage:</strong> para subir imágenes</li>
+        <li><strong>Firebase Emulator Suite:</strong> para pruebas sin conexión</li>
+      </ul>
+      <p>Todo esto sin necesidad de backend personalizado.</p>
+    </section>
+
+    <!-- Dificultades y soluciones -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">⚠️ Retos que encontré y cómo los resolví</h2>
+      <ul class="list-disc list-inside">
+        <li>Sincronización de LiveData al recuperar datos desde Firebase → Lo resolví usando funciones suspend con corutinas</li>
+        <li>Validaciones de formularios en múltiples pantallas → Centralicé en funciones reutilizables</li>
+        <li>Mostrar datos en tiempo real → Usé SnapshotListeners y MutableLiveData</li>
+        <li>Evitar lógica en Activities → Trasladé todo al ViewModel y Repository</li>
+      </ul>
+    </section>
+
+    <!-- Resultado de usar MVVM con Firebase -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">✅ Qué logré con MVVM + Firebase</h2>
+      <p>Gracias a este enfoque conseguí una app modular y mantenible. Fue sencillo añadir funciones como favoritos, contador de likes y filtrado de productos sin romper nada. Las pantallas se comunicaban bien con los datos y cada clase tenía su responsabilidad clara.</p>
+    </section>
+
+    <!-- Consejos y recomendaciones -->
+    <section>
+      <h2 class="text-2xl font-semibold text-blue-700 mb-2">💡 Consejos para otros desarrolladores</h2>
+      <ul class="list-disc list-inside">
+        <li>Empieza con MVVM desde el principio: es más fácil escalar luego</li>
+        <li>Evita acceso directo a Firebase desde Activities</li>
+        <li>Usa ViewModels compartidos para navegación entre pantallas</li>
+        <li>Apóyate en Firebase Emulator para probar rápido sin miedo</li>
+      </ul>
+    </section>
+
+    <!-- Cierre -->
+    <section>
+      <p>Mi experiencia con MVVM + Firebase fue transformadora. Ya no solo sabía "programar una app", sino que aprendí a diseñarla, escalarla y testearla de forma profesional. Lo aplico ahora en todos mis proyectos.</p>
+      <p class="mt-2">📎 <a class="text-blue-600 underline" href="../index.html">Volver al portfolio</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

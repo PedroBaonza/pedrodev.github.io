@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cómo integré Firebase Auth en Android con MVVM | Blog Pedro Baonza</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header class="bg-white shadow p-6 text-center">
+    <h1 class="text-4xl font-bold text-blue-800">🔐 Cómo integré Firebase Auth en Android con MVVM</h1>
+    <p class="mt-2 text-lg text-gray-600">Publicado el 3 de mayo de 2025 · por Pedro Baonza</p>
+  </header>
+
+  <main class="max-w-4xl mx-auto p-6 space-y-10">
+    <!-- Introducción -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">📘 Introducción</h2>
+      <p>Firebase Authentication es uno de los servicios más sencillos pero poderosos para agregar autenticación de usuarios a nuestras apps. En este artículo te explico cómo lo integré desde cero en mi aplicación ShoppingMall App, utilizando arquitectura MVVM, corutinas, LiveData y separación de capas. Verás cada archivo y cada decisión explicada al detalle.</p>
+    </section>
+
+    <!-- Qué es Firebase Auth -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔍 ¿Qué es Firebase Authentication?</h2>
+      <p>Firebase Auth es un servicio de autenticación que permite registrar y autenticar usuarios usando diferentes métodos: email/contraseña, cuentas de Google, Facebook, Apple, etc. En mi caso me enfoqué en el sistema básico de correo y contraseña como punto de partida.</p>
+    </section>
+
+    <!-- Configuración previa -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">⚙️ Configuración paso a paso</h2>
+      <ol class="list-decimal list-inside space-y-3">
+        <li><strong>Crear proyecto en Firebase Console</strong><br>Accedí a <a href="https://console.firebase.google.com" class="text-blue-600 underline">Firebase Console</a>, creé un proyecto nuevo y añadí soporte para Android.</li>
+        <li><strong>Registrar mi app (package name)</strong><br>Ingresé el package name exacto de mi app para obtener el archivo <code>google-services.json</code>.</li>
+        <li><strong>Colocar google-services.json</strong><br>Lo copié dentro de la carpeta <code>app/</code> de mi proyecto Android.</li>
+        <li><strong>Añadir dependencias en build.gradle</strong><br>Agregué estas líneas:
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+dependencies {
+  implementation 'com.google.firebase:firebase-auth:21.1.0'
+  implementation platform('com.google.firebase:firebase-bom:32.0.0')
+}
+</pre></li>
+        <li><strong>Activar método de autenticación</strong><br>Desde Firebase Console > Authentication > Métodos de acceso, habilité "Correo electrónico y contraseña".</li>
+      </ol>
+    </section>
+
+    <!-- Estructura MVVM completa -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🏗️ Estructura MVVM completa</h2>
+      <p>Dividí la lógica en tres capas principales:</p>
+      <ul class="list-disc list-inside">
+        <li><strong>Repository:</strong> gestiona llamadas directas a FirebaseAuth</li>
+        <li><strong>ViewModel:</strong> expone LiveData a la vista y valida datos</li>
+        <li><strong>Activity:</strong> responde a eventos y observa los estados</li>
+      </ul>
+      <p>Esto me permitió mantener un código mantenible, testeable y limpio.</p>
+    </section>
+
+    <!-- Código detallado -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">💻 Código detallado</h2>
+      <h3 class="text-xl font-semibold mt-4">1. AuthRepository.kt</h3>
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+class AuthRepository {
+  private val auth: FirebaseAuth = FirebaseAuth.getInstance()
+
+  fun registerUser(email: String, password: String, callback: (Boolean, String?) -> Unit) {
+    auth.createUserWithEmailAndPassword(email, password)
+      .addOnCompleteListener { task ->
+        if (task.isSuccessful) callback(true, null)
+        else callback(false, task.exception?.message)
+      }
+  }
+
+  fun loginUser(email: String, password: String, callback: (Boolean, String?) -> Unit) {
+    auth.signInWithEmailAndPassword(email, password)
+      .addOnCompleteListener { task ->
+        if (task.isSuccessful) callback(true, null)
+        else callback(false, task.exception?.message)
+      }
+  }
+}
+</pre>
+      <h3 class="text-xl font-semibold mt-6">2. AuthViewModel.kt</h3>
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+class AuthViewModel(private val repository: AuthRepository) : ViewModel() {
+  val authState = MutableLiveData&lt;AuthResult&gt;()
+
+  fun login(email: String, password: String) {
+    if (email.isBlank() || password.isBlank()) {
+      authState.value = AuthResult.Error("Campos vacíos")
+      return
+    }
+    repository.loginUser(email, password) { success, message ->
+      if (success) authState.postValue(AuthResult.Success)
+      else authState.postValue(AuthResult.Error(message))
+    }
+  }
+
+  fun register(email: String, password: String) {
+    if (!email.contains("@") || password.length < 6) {
+      authState.value = AuthResult.Error("Email o contraseña no válidos")
+      return
+    }
+    repository.registerUser(email, password) { success, message ->
+      if (success) authState.postValue(AuthResult.Success)
+      else authState.postValue(AuthResult.Error(message))
+    }
+  }
+}
+
+sealed class AuthResult {
+  object Success : AuthResult()
+  data class Error(val message: String?) : AuthResult()
+}
+</pre>
+      <h3 class="text-xl font-semibold mt-6">3. RegisterActivity.kt</h3>
+<pre class="bg-gray-200 p-3 rounded text-sm overflow-x-auto">
+viewModel.authState.observe(this) { result ->
+  when (result) {
+    is AuthResult.Success -> {
+      Toast.makeText(this, "Registro exitoso", Toast.LENGTH_SHORT).show()
+      startActivity(Intent(this, HomeActivity::class.java))
+    }
+    is AuthResult.Error -> {
+      Toast.makeText(this, result.message, Toast.LENGTH_LONG).show()
+    }
+  }
+}
+</pre>
+    </section>
+
+    <!-- Validaciones, testing, mejoras -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔍 Validaciones, testing y mejoras</h2>
+      <ul class="list-disc list-inside">
+        <li>Validación de formularios desde el ViewModel (evita lógica en la vista)</li>
+        <li>Callback simple que puede ser sustituido por Flow o Result más adelante</li>
+        <li>Testing unitario posible al separar lógica de Firebase en el repositorio</li>
+        <li>Escalable: solo cambiando el repositorio podría adaptarse a Google Sign-In o Firestore</li>
+      </ul>
+    </section>
+
+    <!-- Conclusión -->
+    <section>
+      <h2 class="text-3xl font-semibold text-blue-700 mb-4">✅ Conclusiones</h2>
+      <p>Integrar Firebase Auth me permitió entender los fundamentos de una app real con usuarios. Al combinarlo con MVVM, aprendí a separar bien la lógica, preparar mi app para tests y validar los formularios correctamente. Es una de las bases más importantes que domino ahora como desarrollador Android.</p>
+      <p class="mt-4">📎 <a class="text-blue-600 underline" href="../index.html">Volver al portfolio</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
+    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
