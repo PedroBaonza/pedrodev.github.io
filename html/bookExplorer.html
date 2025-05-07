@@ -5,83 +5,93 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BookExplorer | Pedro Baonza</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-  <header class="bg-white shadow p-6 text-center">
-    <h1 class="text-4xl font-bold text-blue-800">BookExplorer 📚</h1>
-    <p class="mt-2 text-lg text-gray-600">Aplicación Android para buscar libros desde la API de OpenLibrary</p>
+<body class="bg-gradient-to-br from-white to-slate-100 text-slate-800">
+  <header class="bg-white shadow p-8 text-center">
+    <h1 class="text-5xl font-extrabold text-indigo-700">BookExplorer 📚</h1>
+    <p class="mt-3 text-lg text-slate-600">Aplicación Android para explorar libros desde OpenLibrary usando Retrofit y MVVM.</p>
   </header>
 
-  <main class="max-w-5xl mx-auto p-6 space-y-10">
+  <main class="max-w-6xl mx-auto px-6 py-14 space-y-16">
+
     <!-- Descripción general -->
     <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔍 Descripción general</h2>
-      <p>BookExplorer es una aplicación Android desarrollada en Kotlin que permite buscar libros mediante el uso de la API pública de OpenLibrary. Presenta los resultados en un RecyclerView con un diseño limpio y moderno, permitiendo al usuario explorar títulos y acceder a detalles como autor, fecha de publicación, editorial y más.</p>
-      <p class="mt-2">El objetivo fue crear una app fluida, funcional y mantenible, aplicando buenas prácticas como MVVM, separación de responsabilidades y uso de corrutinas para asincronía.</p>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🔍 Descripción general</h2>
+      <p>BookExplorer es una aplicación Android desarrollada en Kotlin que permite buscar libros usando la API pública de OpenLibrary. Los resultados se muestran en una interfaz responsiva con <strong>RecyclerView</strong>, permitiendo al usuario consultar información como título, autor, año de publicación y más. La app implementa el patrón <strong>MVVM</strong> con separación clara de capas, utilizando ViewModel, Repository y coroutines para asincronía.</p>
+      <p class="mt-2">Es un proyecto educativo creado con la intención de consolidar conocimientos de arquitectura limpia, consumo de APIs REST, manejo de estados con LiveData y diseño centrado en el usuario.</p>
     </section>
 
-    <!-- Arquitectura y tecnologías -->
+    <!-- Stack técnico visual -->
     <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🏗️ Arquitectura y tecnologías</h2>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Lenguaje:</strong> Kotlin</li>
-        <li><strong>Patrón:</strong> MVVM (Model - View - ViewModel)</li>
-        <li><strong>API:</strong> OpenLibrary API para búsqueda de libros</li>
-        <li><strong>UI:</strong> RecyclerView, ConstraintLayout, CardView</li>
-        <li><strong>Networking:</strong> Retrofit 2 con GsonConverter</li>
-        <li><strong>Asincronía:</strong> Corutinas</li>
-        <li><strong>Testing:</strong> JUnit (con intención de ampliar a UI Testing)</li>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🧰 Stack técnico utilizado</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 text-sm">
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded">Kotlin</span>
+        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded">MVVM</span>
+        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">Retrofit</span>
+        <span class="bg-green-100 text-green-800 px-3 py-1 rounded">Coroutines</span>
+        <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded">LiveData</span>
+        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded">ViewModel</span>
+        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded">RecyclerView</span>
+        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded">GsonConverter</span>
+      </div>
+    </section>
+
+    <!-- Arquitectura -->
+    <section>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🏗️ Arquitectura y estructura</h2>
+      <p>La app está organizada en paquetes siguiendo el patrón MVVM, con clases como:</p>
+      <ul class="list-disc list-inside mt-2">
+        <li><strong>Repository:</strong> Abstrae el acceso a datos remotos</li>
+        <li><strong>ViewModel:</strong> Expone el estado de la UI mediante LiveData</li>
+        <li><strong>Model:</strong> Representa los datos recibidos de la API</li>
+        <li><strong>UI:</strong> Actividades y adaptadores para mostrar los datos</li>
       </ul>
     </section>
 
     <!-- Funcionalidades -->
     <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🛠️ Funcionalidades destacadas</h2>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🛠️ Funcionalidades</h2>
       <ul class="list-disc list-inside space-y-2">
-        <li>Formulario de búsqueda con validación en tiempo real</li>
-        <li>Consumo eficiente de datos usando Retrofit y corrutinas</li>
-        <li>Vista principal con listado dinámico de libros y scroll suave</li>
-        <li>Vista de detalle con información extendida del libro seleccionado</li>
-        <li>Control de estados de carga, error y éxito usando LiveData</li>
-        <li>Estructura fácilmente escalable para añadir favoritos o historial</li>
+        <li>Búsqueda de libros por texto (título, autor, etc.)</li>
+        <li>Validación básica de campos y manejo de errores</li>
+        <li>Listado con scroll fluido y diseño adaptable</li>
+        <li>Vista de detalle con descripción del libro</li>
+        <li>Gestión de estados: cargando, éxito, error</li>
+        <li>Estructura preparada para expandir a favoritos y base de datos local</li>
       </ul>
-    </section>
-
-    <!-- Captura -->
-    <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">📱 Captura de la aplicación</h2>
-      <div class="flex justify-center">
-        <img src="../images/BookExplorer.jpg" alt="BookExplorer Demo" class="rounded shadow-lg max-w-xs border border-gray-300">
-      </div>
-      <p class="text-sm text-gray-500 mt-2 text-center">Ejemplo de la interfaz de búsqueda de libros en dispositivos móviles.</p>
     </section>
 
     <!-- Lecciones aprendidas -->
     <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🧠 Lecciones y mejoras futuras</h2>
-      <p>Con BookExplorer aprendí a estructurar una app real aplicando MVVM de forma profesional. Profundicé en el uso de Retrofit y aprendí a consumir APIs REST externas con un manejo correcto de errores. Además, el diseño centrado en el usuario me permitió practicar con ConstraintLayout y mejorar mi enfoque en la experiencia de usuario.</p>
-      <p class="mt-2">Próximas mejoras planeadas:</p>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🧠 Aprendizajes y mejoras futuras</h2>
+      <p>Con BookExplorer aprendí a construir una app completa desde cero, aplicando arquitectura limpia y principios de mantenimiento a largo plazo. Me familiaricé con el consumo de APIs externas, parsing de JSON con Gson, control de estados y lógica reactiva con LiveData.</p>
+      <p class="mt-2">Algunas mejoras planteadas:</p>
       <ul class="list-disc list-inside mt-2">
-        <li>Agregar sistema de favoritos persistentes con Room</li>
-        <li>Incluir paginación automática y búsquedas más eficientes</li>
-        <li>Test de UI con Espresso y validaciones con Mockito</li>
-        <li>Internacionalización y accesibilidad básica</li>
+        <li>Integración de Room para persistencia local de favoritos</li>
+        <li>Paginación de resultados y control más avanzado de búsqueda</li>
+        <li>Test de UI automatizados con Espresso</li>
+        <li>Internacionalización (i18n) y accesibilidad para lectores de pantalla</li>
       </ul>
     </section>
 
     <!-- Recursos -->
     <section>
-      <h2 class="text-3xl font-semibold text-blue-700 mb-4">🔗 Recursos y enlaces</h2>
+      <h2 class="text-3xl font-semibold text-indigo-700 mb-4">🔗 Recursos y enlaces</h2>
       <ul class="list-disc list-inside space-y-2">
-        <li><a href="https://github.com/PedroBaonza/BookExplorer" class="text-blue-600 underline" target="_blank">Repositorio en GitHub</a></li>
-        <li><a href="https://openlibrary.org/developers/api" class="text-blue-600 underline" target="_blank">Documentación de la API de OpenLibrary</a></li>
-        <li><a href="../index.html" class="text-blue-600 underline">Volver al portfolio</a></li>
+        <li><a href="https://github.com/PedroBaonza/BookExplorer" class="text-indigo-600 underline" target="_blank">Repositorio en GitHub</a></li>
+        <li><a href="https://openlibrary.org/developers/api" class="text-indigo-600 underline" target="_blank">Documentación API de OpenLibrary</a></li>
+        <li><a href="../index.html" class="text-indigo-600 underline">Volver al portfolio</a></li>
       </ul>
     </section>
   </main>
 
-  <footer class="bg-gray-800 text-white text-center p-6 mt-10">
-    <p>© 2025 Pedro Baonza. Todos los derechos reservados.</p>
+  <footer class="bg-slate-900 text-white text-center p-6 mt-10">
+    <p class="text-sm">© 2025 Pedro Baonza. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
