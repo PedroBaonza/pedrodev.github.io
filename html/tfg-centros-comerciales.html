@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TFG | Centralización de Centros Comerciales</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="icon" href="../favicon.png" type="image/png">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-slate-100 to-white text-slate-800">
+
+  <!-- Hero principal -->
+  <section class="text-center py-20 px-6 bg-white shadow">
+    <h1 class="text-5xl font-extrabold text-indigo-700">TFG: Centralización de Centros Comerciales 🛒</h1>
+    <p class="mt-6 text-lg max-w-3xl mx-auto text-slate-600">
+      Una aplicación Android pensada para transformar la experiencia del usuario en centros comerciales. Desde explorar noticias, productos y tiendas hasta realizar compras seguras, todo en un ecosistema modular, escalable y moderno.
+    </p>
+    <div class="mt-8 space-x-4">
+      <a href="https://gitlab.com/pedrobaonza0115/tfg-mallcenter_2025" class="bg-indigo-700 text-white px-6 py-3 rounded hover:bg-indigo-800 transition">Ver repositorio</a>
+      <a href="/app-debug.apk" class="bg-gray-200 text-slate-800 px-6 py-3 rounded hover:bg-gray-300 transition">Descargar APK</a>
+    </div>
+  </section>
+
+  <!-- Galería de capturas -->
+  <section class="py-16 px-6">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-10 text-center">🖼️ Galería de Imágenes</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <img src="../images/tfg1.jpg" alt="Pantalla de selección de centro" class="rounded shadow">
+      <img src="../images/tfg2.jpg" alt="Carrusel de productos destacados" class="rounded shadow">
+      <img src="../images/tfg3.jpg" alt="Noticias destacadas" class="rounded shadow">
+      <img src="../images/tfg4.jpg" alt="Detalle de producto" class="rounded shadow">
+      <img src="../images/tfg5.jpg" alt="Pantalla de carrito" class="rounded shadow">
+      <img src="../images/tfg6.jpg" alt="Historial de pedidos" class="rounded shadow">
+    </div>
+  </section>
+
+  <!-- Descripción del proyecto -->
+  <section class="bg-slate-50 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">📋 Descripción del Proyecto</h2>
+      <p class="text-lg text-slate-700 mb-4">
+        Este proyecto surge como solución a la falta de digitalización integrada en centros comerciales. La aplicación permite a los usuarios seleccionar un centro comercial y acceder a información detallada sobre tiendas, productos en tendencia, noticias, eventos y gestionar su propio carrito de compras.
+      </p>
+      <p class="text-lg text-slate-700 mb-4">
+        Se ha construido bajo un enfoque de arquitectura limpia (MVVM + Clean Architecture), usando Firebase como backend y almacenamiento de datos en la nube. La navegación es modular y escalable, lo que permite adaptarlo a distintos centros con información personalizada.
+      </p>
+      <p class="text-lg text-slate-700">
+        El reto principal fue estructurar los datos en Firestore para permitir independencia de tiendas, centros, y stock por producto en distintas ubicaciones. Además, se implementó una interfaz moderna y animada, con carrousels, ratings y elementos visuales atractivos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Tecnologías y arquitectura -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">⚙️ Stack Tecnológico y Arquitectura</h2>
+      <ul class="list-disc list-inside space-y-2 text-slate-700">
+        <li><strong>Kotlin</strong> con Android Studio y Jetpack</li>
+        <li><strong>Arquitectura MVVM</strong> + Clean Architecture (modularizada por capas)</li>
+        <li><strong>Firebase</strong>: Auth, Firestore, Storage</li>
+        <li><strong>Jetpack Libraries</strong>: LiveData, Navigation, ViewModel, Room</li>
+        <li><strong>Retrofit</strong> y <strong>Gson</strong> para consumo de APIs</li>
+        <li><strong>JUnit</strong>, <strong>Mockito</strong> y <strong>Espresso</strong> para testing</li>
+        <li><strong>Glide</strong> para carga eficiente de imágenes</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Funcionalidades clave -->
+<section class="bg-white py-16 px-6">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-6">🌟 Funcionalidades Clave</h2>
+    <ul class="list-disc list-inside space-y-6 text-slate-700 text-lg">
+      <li>
+        <strong>Pantalla de selección de centro comercial con diseño atractivo y sistema de likes:</strong>
+        Esta pantalla es la puerta de entrada a la experiencia del usuario. Fue diseñada para combinar estética y funcionalidad, permitiendo elegir entre varios centros y reflejando el interés de los usuarios mediante un sistema de likes. Esto también permite a futuro generar analíticas de interés por ubicación.
+      </li>
+      <li>
+        <strong>Spinner para acceder a distintas secciones (Noticias, Tiendas, Eventos, Info):</strong>
+        En lugar de una navegación clásica con pestañas, se optó por un spinner para ofrecer una interfaz más limpia y centralizada, facilitando el acceso contextual a contenido específico de cada centro.
+      </li>
+      <li>
+        <strong>Noticias destacadas con likes y detalles en tiempo real desde Firebase:</strong>
+        Esta sección permite comunicar promociones y eventos. La interacción mediante likes promueve engagement, y al estar conectado a Firestore, los cambios son reflejados en tiempo real para todos los usuarios.
+      </li>
+      <li>
+        <strong>Productos top valorados con sistema de rating y carrusel horizontal:</strong>
+        Se priorizó un formato visual atractivo y rápido para mostrar los productos mejor puntuados. El carrusel permite recorrerlos sin recargar la pantalla, mejorando la experiencia de usuario y manteniendo la jerarquía de contenido.
+      </li>
+      <li>
+        <strong>Detalle completo de productos con stock, tallas, rating editable y carrusel de imágenes:</strong>
+        Cada producto cuenta con una ficha completa y personalizada. El rating editable permite al usuario aportar valoraciones, el carrusel mejora la visualización, y el stock individual por tienda refuerza la utilidad real del sistema.
+      </li>
+      <li>
+        <strong>Carrito independiente por centro, con stock persistente en Firestore:</strong>
+        Esta decisión permite compras simultáneas en varios centros sin confusión. Además, el stock se actualiza en Firestore por cada acción, garantizando consistencia entre clientes.
+      </li>
+      <li>
+        <strong>Gestor de pedidos, pantalla de checkout con datos guardados del usuario:</strong>
+        Facilita el proceso de compra simulando un entorno real de e-commerce. Se guardan dirección y datos de pago para acelerar futuras compras, y se mejora la experiencia del usuario.
+      </li>
+      <li>
+        <strong>Historial de pedidos en el perfil con fecha, estado y total:</strong>
+        Aporta transparencia y control al usuario. Esta funcionalidad fue pensada como evolución natural del flujo de compra, reforzando la sensación de profesionalismo y continuidad del sistema.
+      </li>
+    </ul>
+  </div>
+</section>
+
+  <!-- Lecciones aprendidas -->
+  <section class="bg-slate-100 py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">🧠 Lecciones Aprendidas</h2>
+      <p class="text-lg text-slate-700 mb-4">
+        Este proyecto me ha permitido comprender a fondo el patrón MVVM y aplicar principios de Clean Architecture desde la base. He aprendido a estructurar una base de datos en la nube pensando en escalabilidad, relación entre colecciones y seguridad con Firebase Rules.
+      </p>
+      <p class="text-lg text-slate-700 mb-4">
+        También ha reforzado mis habilidades en testing, manejo de errores, validaciones y organización por capas. Entendí la importancia de separar la lógica de UI y usar ViewModels efectivos. Me siento mucho más preparado para formar parte de un equipo Android profesional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white text-center py-6">
+    <p class="text-sm">© 2025 Pedro Baonza · Proyecto TFG desarrollado en Android Studio</p>
+    <div class="mt-2 space-x-4 text-sm">
+      <a href="../index.html" class="underline hover:text-indigo-300">Volver al Portfolio</a>
+      <a href="mailto:pedrobaonza0115@gmail.com" class="underline hover:text-indigo-300">Contacto</a>
+    </div>
+  </footer>
+
+</body>
+</html>

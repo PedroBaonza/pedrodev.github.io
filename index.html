@@ -3,139 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pedro Baonza | Desarrollador Android</title>
+  <title>Pedro Baonza | Portfolio Profesional</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <meta name="description" content="Portfolio de Pedro Baonza, desarrollador Android y técnico en automatismos con experiencia en Kotlin, Firebase y proyectos reales.">
+  <!-- AOS Animate On Scroll -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" href="./favicon.png" type="image/png">
   <style>
     body { font-family: 'Inter', sans-serif; }
     html { scroll-behavior: smooth; }
   </style>
-  <link rel="icon" type="image/png" href="./favicon.png" />
-  <meta name="description" content="Portfolio profesional de Pedro Baonza, desarrollador Android especializado en Kotlin, MVVM, Retrofit y Firebase." />
 </head>
+
 <body class="bg-gradient-to-br from-slate-100 to-white text-slate-800">
 
   <!-- Header -->
-  <header class="bg-white shadow p-10 text-center">
+  <header class="bg-white p-10 text-center shadow">
     <h1 class="text-5xl font-extrabold text-indigo-700">Pedro Baonza 👨‍💻</h1>
-    <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Desarrollador Android con formación técnica, pasión por la arquitectura limpia, testing profesional y aprendizaje constante.</p>
+    <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+      Desarrollador Android en formación con pasión por Clean Architecture, testing avanzado y desarrollo mobile de calidad.
+    </p>
   </header>
 
   <!-- Navegación -->
-  <nav class="bg-indigo-700 text-white text-base py-4 sticky top-0 z-50 shadow-md text-center">
+  <nav class="bg-indigo-700 text-white text-base py-3 sticky top-0 z-50 shadow-md text-center">
     <a href="#sobre-mi" class="mx-3 hover:underline">Sobre mí</a>
-    <a href="#habilidades" class="mx-3 hover:underline">Habilidades</a>
+    <a href="#skills" class="mx-3 hover:underline">Skills</a>
     <a href="#proyectos" class="mx-3 hover:underline">Proyectos</a>
     <a href="#experiencia" class="mx-3 hover:underline">Experiencia</a>
     <a href="#contacto" class="mx-3 hover:underline">Contacto</a>
   </nav>
 
   <!-- Sobre mí -->
-  <section id="sobre-mi" class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-4xl font-semibold text-indigo-700 mb-8">🧑‍💼 Sobre mí</h2>
-    <p class="mb-4">Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma. Actualmente estoy en prácticas en <strong>Atresmedia</strong> como desarrollador Android, donde he aprendido a trabajar de forma autónoma y profesional con <strong>Kotlin</strong>, <strong>Retrofit</strong>, <strong>Firebase</strong> y pruebas con <strong>JUnit</strong>.</p>
-    <p class="mb-4">Mis intereses incluyen la arquitectura <strong>MVVM</strong>, <strong>Clean Architecture</strong>, testing avanzado, apps modulares, y herramientas modernas del ecosistema Android.</p>
-    <p>Busco formar parte de un equipo donde pueda seguir creciendo como desarrollador móvil, aportando soluciones reales y manteniéndome en constante evolución.</p>
+  <section id="sobre-mi" class="max-w-5xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-6">🧑‍💼 Sobre mí</h2>
+    <p class="mb-4">Soy Técnico Superior en Desarrollo de Aplicaciones Multiplataforma, con experiencia en desarrollo Android en <strong>Atresmedia</strong>. Me especializo en <strong>arquitectura MVVM</strong>, <strong>Retrofit</strong>, <strong>Firebase</strong> y testing con <strong>JUnit</strong>. También tengo formación previa en <strong>automatismos eléctricos</strong>.</p>
+    <p class="mb-4">Destaco por mi capacidad de aprendizaje autónomo, adaptabilidad y compromiso con el código de calidad. Actualmente estoy desarrollando varias aplicaciones móviles como parte de mi TFG y explorando buenas prácticas como Clean Architecture, modularización y pruebas automatizadas.</p>
+    <p>Mi objetivo es crecer en equipos de desarrollo mobile, aportar soluciones reales y seguir aprendiendo con cada reto.</p>
+    <div class="mt-8">
+  <a href="./Curriculum 2025 mayo.pdf" download
+     class="inline-block bg-indigo-700 text-white px-6 py-3 rounded hover:bg-indigo-800 transition shadow">
+    📄 Descargar CV (PDF)
+  </a>
+</div>
+
   </section>
 
-  <!-- Habilidades -->
-  <section id="habilidades" class="bg-white py-16 px-6 shadow-sm border-y">
+  <!-- Skills -->
+  <section id="skills" class="bg-white py-16 px-6 border-y" data-aos="fade-up">
     <div class="max-w-5xl mx-auto">
-      <h2 class="text-4xl font-semibold text-indigo-700 mb-8">🛠️ Habilidades Técnicas</h2>
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">🛠️ Habilidades Técnicas</h2>
       <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm">
-        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded">Kotlin (MVVM, Jetpack)</span>
-        <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded">Retrofit / OkHttp</span>
-        <span class="bg-green-100 text-green-800 px-3 py-1 rounded">Firebase / Firestore / Auth</span>
-        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">JUnit / Espresso / MockWebServer</span>
+        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded">Kotlin · Jetpack · MVVM</span>
+        <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded">Retrofit / OkHttp</span>
+        <span class="bg-green-100 text-green-800 px-3 py-1 rounded">Firebase / Firestore</span>
+        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded">JUnit / Espresso</span>
+        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded">Java / Hibernate</span>
         <span class="bg-pink-100 text-pink-700 px-3 py-1 rounded">SQLite / Room</span>
-        <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded">Java / Hibernate / JPA</span>
-        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded">HTML / CSS / Tailwind</span>
-        <span class="bg-slate-200 text-slate-800 px-3 py-1 rounded">Git / GitHub / CI</span>
-        <span class="bg-red-100 text-red-700 px-3 py-1 rounded">Python (básico)</span>
+        <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded">HTML / CSS / Tailwind</span>
+        <span class="bg-red-100 text-red-700 px-3 py-1 rounded">Git / GitHub / GitFlow</span>
+        <span class="bg-slate-200 text-slate-700 px-3 py-1 rounded">Python (básico)</span>
       </div>
     </div>
   </section>
 
+  <!-- Secciones futuras -->
   <!-- Proyectos -->
-  <section id="proyectos" class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-4xl font-semibold text-indigo-700 mb-8">📂 Proyectos Destacados</h2>
-    <div class="grid md:grid-cols-2 gap-10">
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg">
-        <h3 class="text-xl font-bold mb-2">BookExplorer 📚</h3>
-        <img src="images/BookExplorerPortada.jpg" alt="BookExplorer" class="rounded mb-4">
-        <p class="mb-2">App Android para buscar libros con Retrofit y OpenLibrary. Arquitectura MVVM, diseño moderno y pruebas unitarias.</p>
-        <div class="flex flex-wrap gap-2 text-sm mb-2">
-          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Kotlin</span>
-          <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Retrofit</span>
-          <span class="bg-green-100 text-green-800 px-2 py-1 rounded">MVVM</span>
-        </div>
-        <p>
-          <a href="https://github.com/PedroBaonza/BookExplorer" class="text-indigo-600 underline">Repositorio</a> · 
-          <a href="./html/bookExplorer.html" class="text-indigo-600 underline">Ver proyecto</a>
-        </p>
-      </div>
+<section id="proyectos" class="max-w-6xl mx-auto px-6 py-16" data-aos="fade-up">
+  <h2 class="text-4xl font-bold text-indigo-700 mb-8">📂 Proyectos Destacados</h2>
+  <div class="grid md:grid-cols-2 gap-10">
 
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg">
-        <h3 class="text-xl font-bold mb-2">Proyecto Hibernate 🗃️</h3>
-        <p class="mb-2">Aplicación Java para gestión de entidades usando Hibernate y operaciones CRUD.</p>
-        <div class="flex flex-wrap gap-2 text-sm mb-2">
-          <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Java</span>
-          <span class="bg-gray-100 text-gray-800 px-2 py-1 rounded">Hibernate</span>
-          <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">JPA</span>
-        </div>
-        <a href="https://github.com/PedroBaonza/Proyecto-Hibernate" class="text-indigo-600 underline">Repositorio</a>
+    <!-- Proyecto TFG -->
+    <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg">
+      <h3 class="text-xl font-bold mb-2">TFG: Centros Comerciales 🛒</h3>
+      <img src="images/tfg-centros-comerciales.jpg" alt="App Centros Comerciales" class="rounded mb-4 w-full h-48 object-cover">
+      <p class="mb-2 text-sm text-slate-700">App Android para explorar centros, tiendas y productos. Arquitectura MVVM + Firebase + carrito por centro.</p>
+      <div class="flex flex-wrap gap-2 text-xs mb-2">
+        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Kotlin</span>
+        <span class="bg-green-100 text-green-800 px-2 py-1 rounded">Firebase</span>
+        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">MVVM</span>
       </div>
-
-      <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg col-span-full">
-        <h3 class="text-xl font-bold mb-2">Workspace de Aprendizaje Android 📱</h3>
-        <p class="mb-2">Repositorio que recopila varios proyectos diseñados para aprender desarrollo Android moderno con MVVM, Clean Architecture, coroutines y testing.</p>
-        <ul class="list-disc list-inside text-sm text-slate-700 mb-2">
-          <li><strong>ToDoList App:</strong> CRUD de tareas con Room, Clean Architecture, testing completo</li>
-          <li><strong>TestingAppDemo:</strong> API REST, Clean Architecture, pruebas con Hamcrest y Mockito</li>
-          <li><strong>Spaceflight:</strong> Noticias espaciales en tiempo real con LiveData y Retrofit</li>
-          <li><strong>FundamentosJUnit:</strong> Proyecto didáctico para dominar JUnit en profundidad</li>
-          <li><strong>CorrutinasFlow:</strong> Base para trabajar con coroutines, Flow, y estado reactivo</li>
-        </ul>
-        <p>
-          <a href="https://github.com/PedroBaonza/WorkSpace-Aprendizaje-Android" class="text-indigo-600 underline">Ver Repositorio</a> · 
-          <a href="./html/workSpace-Aprendizaje-Android.html" class="text-indigo-600 underline">Ver resumen</a>
-        </p>
-      </div>
+      <a href="./html/tfg-centros-comerciales.html" class="text-indigo-600 underline">Ver detalles</a>
+      <a href="https://github.com/PedroBaonza/TFG-Centros-Comerciales" class="text-indigo-600 text-sm underline">Ver repositorio</a>
     </div>
-  </section>
 
-  <!-- Experiencia -->
-  <section id="experiencia" class="max-w-5xl mx-auto px-6 py-16">
-    <h2 class="text-4xl font-semibold text-indigo-700 mb-8">💼 Experiencia Profesional</h2>
-    <ul class="space-y-6 text-slate-700">
-      <li><strong>Atresmedia (2025)</strong> – Prácticas como desarrollador Android · <span class="text-sm text-gray-500">Testing, Retrofit, Firebase, MVVM</span></li>
-      <li><strong>Prosegur / Trablisa (2023 - 2025)</strong> – Atención al cliente en centros comerciales</li>
-      <li><strong>Gestiman (2023 - 2024)</strong> – Mantenimiento electromecánico en parques acuáticos</li>
-      <li><strong>IVOLTA (2023)</strong> – Oficina técnica eléctrica en proyectos residenciales</li>
+    <!-- Proyecto WellList -->
+    <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg">
+      <h3 class="text-xl font-bold mb-2">WellList 🧘‍♀️👨‍👩‍👧 EN PRODUCCION PROYECTO PERSONAL</h3>
+      <img src="images/welllist-preview.jpg" alt="WellList App" class="rounded mb-4 w-full h-48 object-cover">
+      <p class="mb-2 text-sm text-slate-700">App de bienestar personal y familiar: checklists, recompensas, hábitos, estadísticas y gamificación.</p>
+      <div class="flex flex-wrap gap-2 text-xs mb-2">
+        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">Flutter / Kotlin</span>
+        <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded">Firebase</span>
+        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Gamificación</span>
+      </div>
+      <a href="https://github.com/PedroBaonza/WellList-App" class="text-indigo-600 text-sm underline">Ver repositorio</a>
+    </div>
+
+    <!-- Proyecto BookExplorer -->
+    <div class="bg-white rounded-xl p-6 shadow hover:shadow-lg" data-aos="fade-up">
+      <h3 class="text-xl font-bold mb-2">BookExplorer 📚</h3>
+      <img src="images/BookExplorerPortada.jpg" alt="BookExplorer App" class="rounded mb-4 w-full h-48 object-cover">
+      <p class="mb-2 text-sm text-slate-700">App Android para buscar libros desde OpenLibrary usando Retrofit y MVVM. Interfaz moderna y pruebas unitarias.</p>
+      <div class="flex flex-wrap gap-2 text-xs mb-2">
+        <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded">Kotlin</span>
+        <span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded">Retrofit</span>
+        <span class="bg-indigo-100 text-indigo-800 px-2 py-1 rounded">MVVM</span>
+      </div>
+      <a href="https://github.com/PedroBaonza/BookExplorer" class="text-indigo-600 text-sm underline">Ver repositorio</a>
+    </div>
+
+  </div>
+</section>
+
+
+  <section id="experiencia" class="max-w-5xl mx-auto px-6 py-16" data-aos="fade-up">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-6">💼 Experiencia Profesional</h2>
+    <ul class="list-disc list-inside text-slate-700 space-y-2">
+      <li><strong>Atresmedia (2025)</strong> – Desarrollador Android en prácticas · Kotlin, Retrofit, Firebase</li>
+      <li><strong>Prosegur / Trablisa (2023-2025)</strong> – Atención al cliente en centros comerciales</li>
+      <li><strong>Gestiman (2023-2024)</strong> – Mantenimiento electromecánico en parques acuáticos</li>
+      <li><strong>IVOLTA (2023)</strong> – Oficina técnica eléctrica</li>
     </ul>
   </section>
 
+  <!-- Formación y Certificados -->
+<section id="formacion" class="bg-slate-50 py-16 px-6 border-y" data-aos="fade-up">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-4xl font-bold text-indigo-700 mb-10">🎓 Formación & Certificados</h2>
+
+    <!-- Formación -->
+    <div class="mb-12">
+      <h3 class="text-2xl font-semibold text-slate-800 mb-4">Formación Académica</h3>
+      <ul class="space-y-4 text-slate-700">
+        <li>
+          <strong>FP Técnico Superior en Desarrollo de Aplicaciones Multiplataforma</strong><br>
+          IES Gonzalo Chacón (2023 – 2025) · Arroyomolinos, Madrid
+        </li>
+        <li>
+          <strong>FP Técnico Superior en Sistemas Electrotécnicos y Automáticos</strong><br>
+          IES Satafi (2021 – 2023) · Getafe, Madrid
+        </li>
+      </ul>
+    </div>
+
+    <!-- Certificados -->
+    <div>
+      <h3 class="text-2xl font-semibold text-slate-800 mb-4">Certificados y Cursos</h3>
+      <ul class="space-y-4 text-slate-700">
+        <li>
+          <strong>Protección y riesgos laborales</strong><br>
+          Certificación oficial del módulo de Formación y Orientación Laboral
+        </li>
+        <li>
+          <strong>Curso REBT (Reglamento Electrotécnico de Baja Tensión)</strong><br>
+          PLC Madrid (Feb - Jun 2022) · Online
+        </li>
+        <li>
+          <strong>Curso de Medidas Eléctricas Reglamentarias BT I</strong><br>
+          PLC Madrid (Mar - May 2020) · Online
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
   <!-- Contacto -->
-  <section id="contacto" class="max-w-3xl mx-auto px-6 py-16 bg-white rounded shadow">
-    <h2 class="text-4xl font-semibold text-indigo-700 mb-8">📬 Contacto</h2>
-    <form action="mailto:pedrobaonza0115@gmail.com" method="POST" enctype="text/plain" class="space-y-4">
-      <input type="text" name="nombre" placeholder="Tu nombre" required class="w-full p-3 border rounded" />
-      <input type="email" name="email" placeholder="Tu correo" required class="w-full p-3 border rounded" />
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required class="w-full p-3 border rounded"></textarea>
-      <button type="submit" class="bg-indigo-700 text-white px-6 py-3 rounded hover:bg-indigo-800">Enviar</button>
-    </form>
+  <section id="contacto" class="bg-white py-16 px-6 shadow-inner" data-aos="fade-up">
+    
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-indigo-700 mb-6">📬 Contacto</h2>
+      <p class="text-lg mb-6">¿Te gustaría trabajar conmigo o colaborar en un proyecto? ¡Hablemos!</p>
+      <a href="mailto:pedrobaonza0115@gmail.com" class="inline-block bg-indigo-700 text-white px-6 py-3 rounded hover:bg-indigo-800 transition">pedrobaonza0115@gmail.com</a>
+    </div>
+
+    
   </section>
 
   <!-- Footer -->
   <footer class="bg-slate-900 text-white text-center py-6 mt-10">
     <p class="text-sm">© 2025 Pedro Baonza. Todos los derechos reservados.</p>
     <div class="mt-2 space-x-4 text-sm">
-      <a href="https://github.com/PedroBaonza" class="underline hover:text-indigo-300">GitHub</a>
-      <a href="mailto:pedrobaonza0115@gmail.com" class="underline hover:text-indigo-300">Email</a>
-      <a href="https://www.linkedin.com/in/pedro-baonza-garc%C3%ADa-411b15274/" class="underline hover:text-indigo-300">LinkedIn</a>
-      <a href="./CV - Pedro Baonza - 2025.pdf" class="underline hover:text-indigo-300">CV</a>
-    </div>
+    <a href="https://github.com/PedroBaonza" class="underline hover:text-indigo-300">GitHub</a>
+    <a href="mailto:pedrobaonza0115@gmail.com" class="underline hover:text-indigo-300">Email</a>
+    <a href="https://www.linkedin.com/in/pedro-baonza-garc%C3%ADa-411b15274/" class="underline hover:text-indigo-300">LinkedIn</a>
+    <a href="assets/pdf/CV-PedroBaonza-2025.pdf" class="underline hover:text-indigo-300" download>CV (PDF)</a>
+  </div>
   </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
 
 </body>
 </html>
